@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { content, topics } from "../_data";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export function generateStaticParams() {
   return topics.map((t) => ({ slug: t.slug }));
@@ -36,7 +37,7 @@ export default function DocTopicPage({ params }: { params: { slug: string } }) {
       </div>
 
       <div className="flex flex-wrap gap-3 pt-2 text-sm">
-        <a href="/docs" className="px-3 py-1.5 rounded-md border border-white/15 hover:bg-white/5">All topics</a>
+        <Link href="/docs" className="px-3 py-1.5 rounded-md border border-white/15 hover:bg-white/5">All topics</Link>
         <a href="#top" className="px-3 py-1.5 rounded-md border border-white/15 hover:bg-white/5">Back to top</a>
       </div>
     </div>
